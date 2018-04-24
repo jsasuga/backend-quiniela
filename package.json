@@ -20,11 +20,11 @@
     "prestart": "npm run drop-sqlite-db",
     "start": "npm run nodemon",
     "poststart": "npm run create-sqlite-db",
-    "nodemon": "nodemon --exec npm run dev-w",
-    "prepush": "npm test",
+    "nodemon": "nodemon --exec npm run dev",
+    
     "pretest": "npm run lint",
     "production": "cross-env NODE_ENV=production && node ./api/api.js",
-    "test": "npm run create-sqlite-db cross-env NODE_ENV=test && nyc ava -s; npm run drop-sqlite-db",
+    "test": "npm run create-sqlite-db && cross-env NODE_ENV=test && nyc ava -s; npm run drop-sqlite-db",
     "test-ci": "nyc ava --no-color"
   },
   "babel": {
