@@ -7,8 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/aichbauer/express-rest-api-boilerplate.git"
   },
-  "homepage":
-    "https://github.com/aichbauer/express-rest-api-boilerplate#readme",
+  "homepage": "https://github.com/aichbauer/express-rest-api-boilerplate#readme",
   "bugs": {
     "url": "https://github.com/aichbauer/express-rest-api-boilerplate/issues"
   },
@@ -25,19 +24,25 @@
     "prepush": "npm test",
     "pretest": "npm run lint",
     "production": "cross-env NODE_ENV=production && node ./api/api.js",
-    "test":
-      "npm run create-sqlite-db; cross-env NODE_ENV=test && nyc ava -s; npm run drop-sqlite-db",
+    "test": "npm run create-sqlite-db cross-env NODE_ENV=test && nyc ava -s; npm run drop-sqlite-db",
     "test-ci": "nyc ava --no-color"
   },
   "babel": {
-    "presets": ["env"]
+    "presets": [
+      "env"
+    ]
   },
   "ava": {
-    "require": ["babel-register", "babel-polyfill"],
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ],
     "babel": "inherit"
   },
   "nyc": {
-    "exclude": ["test"]
+    "exclude": [
+      "test"
+    ]
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
@@ -47,22 +52,22 @@
     "express": "^4.15.3",
     "express-routes-mapper": "^1.0.1",
     "helmet": "^3.6.1",
-    "jsonwebtoken": "^7.4.1",
+    "jsonwebtoken": "^7.4.3",
     "nodemon": "^1.11.0",
     "nyc": "^11.0.1",
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.37.6",
-    "sqlite3": "^3.1.8",
+    "sqlite3": "^3.1.13",
     "supertest": "^3.0.0"
   },
   "devDependencies": {
-    "ava": "^0.19.1",
+    "ava": "^0.25.0",
     "cross-env": "^5.1.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.3.0",
-    "husky": "^0.13.4",
+    "husky": "^0.14.3",
     "shx": "^0.2.2"
   }
 }
