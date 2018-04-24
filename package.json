@@ -12,6 +12,7 @@
     "url": "https://github.com/aichbauer/express-rest-api-boilerplate/issues"
   },
   "scripts": {
+    "dev-w": "SET NODE_ENV=development && node ./api/api.js",
     "dev": "cross-env NODE_ENV=development && node ./api/api.js",
     "create-sqlite-db": "shx touch ./db/database.sqlite",
     "drop-sqlite-db": "shx rm ./db/database.sqlite",
@@ -19,7 +20,7 @@
     "prestart": "npm run drop-sqlite-db",
     "start": "npm run nodemon",
     "poststart": "npm run create-sqlite-db",
-    "nodemon": "nodemon --exec npm run dev",
+    "nodemon": "nodemon --exec npm run dev-w",
     "prepush": "npm test",
     "pretest": "npm run lint",
     "production": "cross-env NODE_ENV=production && node ./api/api.js",
@@ -54,7 +55,9 @@
     "jsonwebtoken": "^7.4.1",
     "nodemon": "^1.11.0",
     "nyc": "^11.0.1",
-    "sequelize": "^3.30.4",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.6",
     "sqlite3": "^3.1.8",
     "supertest": "^3.0.0"
   },
